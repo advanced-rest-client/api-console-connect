@@ -1,0 +1,66 @@
+html {
+  font-size: 65%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+.app {
+  height: 100vh;
+  overflow: auto;
+}
+
+.api-console-container {
+  position: relative;
+}
+
+.error-container,
+.loader-container {
+  margin: calc(50vh - 75px) auto;
+}
+
+.loader-container {
+  width: 100px; 
+}
+
+.error-container {
+  width: 360px;
+  text-align: center;
+}
+
+.error-message {
+  display: block;
+  color: #D1344E;
+}
+
+#logo-mule {
+  animation: bounce 1s ease-in-out infinite alternate;
+}
+
+#shadow {
+  animation: grow 1s ease-in-out infinite alternate;
+  transform-origin: center center;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(-3px);
+    opacity: .9;
+  }
+  to {
+    transform: translateY(3px);
+    opacity: 1;
+  }
+}
+@keyframes grow {
+  from {
+    transform: scaleY(.5) scaleX(.6);
+    opacity: .1;
+  }
+  to {
+    transform: scaleY(.8) scaleX(.8);
+    opacity: .5;
+  }
+}

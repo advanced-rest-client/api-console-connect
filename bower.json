@@ -1,0 +1,26 @@
+{
+  "name": "console-demo",
+  "authors": [
+    "Pawel Psztyc <jarrodek@gmail.com>"
+  ],
+  "description": "A demo page for the API console",
+  "main": "import.html",
+  "license": "Apache 2.0",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "raml-js-parser": "advanced-rest-client/raml-js-parser#^2.0.1",
+    "raml-json-enhance": "advanced-rest-client/raml-json-enhance#^0.1.7",
+    "api-console": "mulesoft/api-console#release/4.0.0",
+    "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^1.5.0",
+    "paper-listbox": "PolymerElements/paper-listbox#^1.1.2",
+    "paper-item": "PolymerElements/paper-item#^1.2.1"
+  }
+}

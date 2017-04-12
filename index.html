@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <script>
+        window.Polymer = {
+          dom: 'shadow'
+        };
+        // Load webcomponentsjs polyfill if browser does not support native Web Components
+        (function() {
+          'use strict';
+          var onload = function() {
+            // For native Imports, manually fire WebComponentsReady so user code
+            // can use the same code path for native and polyfill'd imports.
+            if (!window.HTMLImports) {
+              document.dispatchEvent(new CustomEvent('WebComponentsReady', {bubbles: true}));
+            }
+          };
+          var webComponentsSupported = (
+            'registerElement' in document &&
+            'import' in document.createElement('link') &&
+            'content' in document.createElement('template')
+          );
+          if (!webComponentsSupported) {
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'bower_components/webcomponentsjs/webcomponents-lite.min.js';
+            script.onload = onload;
+            document.head.appendChild(script);
+          } else {
+            document.addEventListener('DOMContentLoaded', function() {
+              onload();
+            });
+          }
+        })();
+    </script>
+    <link rel="import" href="bower_components/api-console/api-console.html">
+    <link rel="import" href="bower_components/raml-js-parser/raml-js-parser.html">
+    <link rel="import" href="bower_components/raml-json-enhance/raml-json-enhance.html">
+    <link rel="import" href="bower_components/anypoint-styles/typography.html">
+    <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+    <style is="custom-style" include="iron-flex iron-flex-alignment"></style>
+    <style is="custom-style">
+        body {
+            @apply(--anypoint-font-body);
+        }
+        .test {
+          --paper-listbox-color: #000;
+          --paper-dropdown-menu-input: {
+            color: #fff;
+          };
+          --paper-input-container-color: #F4F5F6;
+          --paper-input-container-focus-color: #F9FAFB;
+          --paper-input-container-input-color: #F9FAFB;
+          --paper-dropdown-menu-icon: {
+            color: #F4F5F6;
+          };
+        }
+    </style>
+    <link href="main.css" media="all" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="app layout horizontal start">
+        <section class="api-console-container layout horizontal flex self-stretch">
+            <div class="loader-container" id="logo-mule-wrapper" hidden>
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="150px" viewBox="0 -4 15 25" xml:space="preserve">
+                  <g id="logo-mule">
+                    <g id="head">
+                      <path transform="scale(.7) translate(-1.3,-4)" fill="#00A2DF" d="M17.249712,14.5563059l1.8653812,6.9614553c-1.877718,0.8028088-3.9438229,1.2497158-6.1150904,1.2497158s-4.2373724-0.446907-6.1150913-1.2497158l1.8653812-6.9614553c-2.5400882-1.4698143-4.2502899-4.2144346-4.2502899-7.3601689c0-1.4318066,0.3555708-2.7799783,0.9808421-3.963614l5.7489209,8.2103434h3.540473l5.7489204-8.2103434c0.6252728,1.1836357,0.9808426,2.5318074,0.9808426,3.963614C21.5000019,10.3418713,19.7898006,13.0864916,17.249712,14.5563059z"/>
+                    </g>
+                  </g>
+                  <defs>
+                    <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                      <stop offset="0%" style="stop-color:rgb(0,0,0);
+                          stop-opacity:.5" />
+                      <stop offset="100%" style="stop-color:rgb(0,0,0);stop-opacity:0" />
+                    </radialGradient>
+                  </defs>
+                  <ellipse id="shadow" cx="8" cy="18" rx="7" ry="2" fill="url(#grad1)" />
+                </svg>
+            </div>
+            <div class="error-container" id="error" hidden>
+                <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="150" viewBox="0 -4 15 25" xml:space="preserve">
+                    <g id="logo-mule-error" transform="translate(-0.67414841,1.498109)">
+                      <g id="head">
+                        <path transform="matrix(0.7,0,0,0.7,-0.91,-2.8)" d="m 17.249712,14.556306 1.865381,6.961455 c -1.877718,0.802809 -3.943823,1.249716 -6.11509,1.249716 -2.171268,0 -4.2373726,-0.446907 -6.1150915,-1.249716 L 8.7502927,14.556306 C 6.2102045,13.086492 4.5000028,10.341871 4.5000028,7.196137 c 0,-1.4318066 0.3555708,-2.7799783 0.9808421,-3.963614 l 5.7489211,8.210343 3.540473,0 5.74892,-8.210343 c 0.625273,1.1836357 0.980843,2.5318074 0.980843,3.963614 0,3.145734 -1.710201,5.890355 -4.25029,7.360169 z"
+                            id="path4268" inkscape:connector-curvature="0" style="fill:#00a2df" />
+                        <path d="M 9.9355049,7.4194844 9.5095477,7.8116972 9.0835902,7.4194844 8.6576327,7.8116972 9.0835902,8.20391 8.6576327,8.596123 9.0835902,8.9883358 9.5095477,8.596123 9.9355049,8.9883358 10.361463,8.596123 9.9355049,8.20391 10.361463,7.8116972 Z M 6.5760676,8.9883358 7.0020251,8.596123 7.4279825,8.9883358 7.8539398,8.596123 7.4279825,8.20391 7.8539398,7.8116972 7.4279825,7.4194844 7.0020251,7.8116972 6.5760676,7.4194844 6.1501102,7.8116972 6.5760676,8.20391 6.1501102,8.596123 Z m 1.6797187,0.7400238 c -0.9363024,0 -1.7319587,0.5402184 -2.053436,1.2950434 l 4.1068717,0 C 9.9877449,10.268578 9.1920889,9.7283596 8.2557863,9.7283596 Z"
+                            class="style-scope iron-icon" id="path4270" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccccccccccccccccccccccccsccs" style="fill:#ffffff" />
+                      </g>
+                  </g>
+                </svg>
+                <span class="error-message">Unable to read RAML data. Check your internet connection.</span>
+            </div>
+            <api-console>
+              <div class="api-console-nav" nav>
+                <paper-dropdown-menu no-label-float label="Select API to load" class="test">
+                  <paper-listbox class="dropdown-content">
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13093617/versions/179482/files/root">Meetup</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13084695/versions/179318/files/root">Github</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13081245/versions/179275/files/root">Slack</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13079832/versions/179264/files/root">GlassDoor</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13079412/versions/179261/files/root">LinkedIn</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12979886/versions/178307/files/root">Factory Floor</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12979720/versions/178301/files/root">Image Recognition API</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12953201/versions/178171/files/root">Slack System API</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946235/versions/177988/files/root">Work Market API</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946224/versions/177985/files/root">Robot Telepresence</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946219/versions/177984/files/root">CandidateRanking</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946186/versions/177982/files/root">OCF Temperature</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946182/versions/177981/files/root">OCF Button</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946177/versions/177980/files/root">OCF Binary Switch</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946170/versions/177979/files/root">Google Prediction API</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946162/versions/177978/files/root">CandidateEnrichment</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946155/versions/177977/files/root">Candidates</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946148/versions/177976/files/root">Candidates360</paper-item>
+                  </paper-listbox>
+                </paper-dropdown-menu>
+              </div>
+            </api-console>
+        </section>
+    </div>
+
+    <raml-js-parser json></raml-js-parser>
+    <raml-json-enhance></raml-json-enhance>
+    <script src="main.js"></script>
+</body>
+
+</html>
