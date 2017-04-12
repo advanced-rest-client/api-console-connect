@@ -1,6 +1,7 @@
 The demo API console application for the Connect 2017
 
 ## Local preview
+
 Clone the repo
 ```
 git clone https://github.com/advanced-rest-client/api-console-connect.git
@@ -26,8 +27,10 @@ Serve local version:
 polymer serve
 ```
 
-#Use
-Cloned repo from the preview section should be use to run the application on a server.
+# Use in the demo
+
+Cloned repo from the preview section contains all the files that are required to run the demo.
+Copy them to your server (or use locally).
 
 **Required files**
 - bower_components/
