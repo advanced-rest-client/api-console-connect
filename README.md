@@ -12,8 +12,10 @@ if you don't have [bower](https://bower.io/):
 sudo npm install -g bower
 ```
 
+
 Install dependencies:
 ```
+cd api-console-connect
 bower install
 ```
 
