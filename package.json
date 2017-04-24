@@ -1,0 +1,35 @@
+{
+  "name": "api-console-build",
+  "version": "0.1.0",
+  "description": "A builder for the API console web component",
+  "main": "main.js",
+  "dependencies": {
+    "css-slam": "^1.2.1",
+    "del": "^2.2.2",
+    "eslint": "^3.19.0",
+    "eslint-config-google": "^0.7.1",
+    "eslint-plugin-html": "^2.0.1",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-html-minifier": "^0.1.8",
+    "gulp-if": "^2.0.2",
+    "gulp-strip-comments": "^2.4.5",
+    "gulp-uglify": "^2.1.2",
+    "merge-stream": "^1.0.1",
+    "polymer-build": "^1.1.0",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/advanced-rest-client/api-console-connect.git"
+  },
+  "author": "Pawel Psztyc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/advanced-rest-client/api-console-connect/issues"
+  },
+  "homepage": "https://github.com/advanced-rest-client/api-console-connect#readme"
+}

@@ -95,10 +95,11 @@
                 </svg>
                 <span class="error-message">Unable to read RAML data. Check your internet connection.</span>
             </div>
-            <api-console append-headers="X-key: my-api-key">
+            <api-console>
               <div class="api-console-nav" nav>
                 <paper-dropdown-menu no-label-float label="Select API to load" class="test">
                   <paper-listbox class="dropdown-content">
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/52560d3f-c37a-409d-9887-79e0a9a9ecff/public/apis/7782/versions/7918/files/root">Github API example</paper-item>
                     <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13093617/versions/179482/files/root">Meetup</paper-item>
                     <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13084695/versions/179318/files/root">Github</paper-item>
                     <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13081245/versions/179275/files/root">Slack</paper-item>
@@ -125,7 +126,7 @@
     </div>
 
     <raml-js-parser json></raml-js-parser>
-    <raml-json-enhance></raml-json-enhance>
+    <raml-json-enhance import-location="/components/raml-json-enhance/"></raml-json-enhance>
     <script src="main.js"></script>
 </body>
 

@@ -1,5 +1,5 @@
 {
-  "esnext": false,
+  "esnext": true,
   "node": true,
   "browser": true,
   "bitwise": false,
@@ -15,6 +15,6 @@
   "unused": true,
   "newcap": false,
   "globals": {
-    
+
   }
 }
