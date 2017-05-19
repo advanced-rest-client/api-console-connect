@@ -95,28 +95,29 @@
                 </svg>
                 <span class="error-message">Unable to read RAML data. Check your internet connection.</span>
             </div>
-            <api-console append-headers="X-key: my-api-key">
+            <api-console append-headers="X-Key: my-api-key" proxy="https://visualize-http.herokuapp.com/api/proxy/">
               <div class="api-console-nav" nav>
                 <paper-dropdown-menu no-label-float label="Select API to load" class="test">
                   <paper-listbox class="dropdown-content">
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13079412/versions/179261/files/root">LinkedIn</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13079832/versions/179264/files/root">GlassDoor</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946155/versions/177977/files/root">Candidates</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13081245/versions/179275/files/root">Slack</paper-item>
                     <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13093617/versions/179482/files/root">Meetup</paper-item>
                     <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13084695/versions/179318/files/root">Github</paper-item>
-                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13081245/versions/179275/files/root">Slack</paper-item>
-                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13079832/versions/179264/files/root">GlassDoor</paper-item>
-                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13079412/versions/179261/files/root">LinkedIn</paper-item>
-                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12979886/versions/178307/files/root">Factory Floor</paper-item>
-                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12979720/versions/178301/files/root">Image Recognition API</paper-item>
-                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12953201/versions/178171/files/root">Slack System API</paper-item>
-                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946235/versions/177988/files/root">Work Market API</paper-item>
-                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946224/versions/177985/files/root">Robot Telepresence</paper-item>
-                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946219/versions/177984/files/root">CandidateRanking</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946162/versions/177978/files/root">Candidate Enrichment</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946148/versions/177976/files/root">Candidates 360</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946219/versions/177984/files/root">Candidate Ranking</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946228/versions/177987/files/root">Top Candidates</paper-item>
                     <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946186/versions/177982/files/root">OCF Temperature</paper-item>
                     <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946182/versions/177981/files/root">OCF Button</paper-item>
                     <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946177/versions/177980/files/root">OCF Binary Switch</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12979886/versions/178307/files/root">Factory Floor</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12979720/versions/178301/files/root">Image Recognition API</paper-item>
+                    <!--paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12953201/versions/178171/files/root">Slack System API</paper-item-->
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/13119632/versions/180090/files/root">Work Market Dispatcher</paper-item>
+                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946224/versions/177985/files/root">Robot Telepresence</paper-item>
                     <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946170/versions/177979/files/root">Google Prediction API</paper-item>
-                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946162/versions/177978/files/root">CandidateEnrichment</paper-item>
-                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946155/versions/177977/files/root">Candidates</paper-item>
-                    <paper-item data-src="https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/98196c04-981c-4702-90bd-c8a2f697d895/public/apis/12946148/versions/177976/files/root">Candidates360</paper-item>
                   </paper-listbox>
                 </paper-dropdown-menu>
               </div>
